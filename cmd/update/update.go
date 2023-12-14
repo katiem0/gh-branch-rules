@@ -27,7 +27,7 @@ func NewCmdUpdate() *cobra.Command {
 	var authToken string
 
 	updateCmd := &cobra.Command{
-		Use:   "update <target organization> [flags]",
+		Use:   "update [flags] <organization>",
 		Short: "update branch protection policies",
 		Long:  "Update branch protection policies for repositories from a file.",
 		Args:  cobra.ExactArgs(1),
