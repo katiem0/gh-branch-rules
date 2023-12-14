@@ -3,24 +3,24 @@ package cmd
 import (
 	"github.com/spf13/cobra"
 
-	createCmd "github.com/katiem0/gh-branch-rules/cmd/create"
 	listCmd "github.com/katiem0/gh-branch-rules/cmd/list"
+	updateCmd "github.com/katiem0/gh-branch-rules/cmd/update"
 )
 
-func NewCmd() *cobra.Command {
+func NewCmdRoot() *cobra.Command {
 
-	cmd := &cobra.Command{
-		Use:   "branchrules <command> [flags]",
-		Short: "List and create branch protection rules.",
-		Long:  "List and create branch protection rules.",
+	cmdRoot := &cobra.Command{
+		Use:   "branch-rules <command> [flags]",
+		Short: "List and update branch protection rules.",
+		Long:  "List and update branch protection rules for repositories in an organization.",
 	}
 
-	cmd.AddCommand(listCmd.NewCmdList())
-	cmd.AddCommand(createCmd.NewCmdCreate())
-	cmd.CompletionOptions.DisableDefaultCmd = true
-	cmd.SetHelpCommand(&cobra.Command{
+	cmdRoot.AddCommand(listCmd.NewCmdList())
+	cmdRoot.AddCommand(updateCmd.NewCmdUpdate())
+	cmdRoot.CompletionOptions.DisableDefaultCmd = true
+	cmdRoot.SetHelpCommand(&cobra.Command{
 		Use:    "no-help",
 		Hidden: true,
 	})
-	return cmd
+	return cmdRoot
 }

@@ -1,2 +1,5 @@
 /gh-branch-rules
 /gh-branch-rules.exe
+*.csv
+
+.vscode
