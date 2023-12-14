@@ -55,32 +55,36 @@ Flags:
 
 The output `csv` file contains the following information:
 
-| Field Name | Description |
-|:-----------|:------------|
-|`RepositoryName` | The name of the repository where the data is extracted from |
-|`RepositoryID`| The `ID` associated with the Repository, for API usage |
-|`BranchProtectionRulePattern`| Identifies the protection rule pattern |
-|`BranchProtectionRuleId`| The branch protection policy ID that is needed for updating policies |
-|`AllowsDeletions`| If the branch associated to the policy can be deleted |
-|`AllowsForcePushes`| If force pushes are allowed on the branch |
-|`BlockCreations`| If branch creation matching the rule pattern is a protected operation |
-|`DismissesStaleReviews`| If new commits pushed to matching branches dismiss pull request review approvals |
-|`IsAdminEnforced`| If admins override branch protection |
-|`LockAllowsFetchAndMerge`| If users can pull changes from upstream when the branch is locked. Set to `true` allows fork syncing. Set to false prevents fork syncing|
-|`LockBranch`| If the branch is set as `read-only`. If this is `true`, users will not be able to push to the branch|
-|`RequireLastPushApproval`| If the most recent push must be approved by someone other than the person who pushed it |
-|`RequiredApprovingReviewCount`| Number of approving reviews required to update matching branches|
-|`RequiresApprovingReviews`| If approving reviews are required to update matching branches |
-|`RequiresCodeOwnerReviews`| If reviews from code owners are required to update matching branches |
-|`RequiresCommitSignatures`| If commits are required to be signed|
-|`RequiresConversationResolution`| If conversations are required to be resolved before merging |
-|`RequiresDeployments`| If this branch requires deployment to specific environments before merging |
-|`RequiresLinearHistory`| If merge commits are prohibited from being pushed to this branch|
-|`RequiresStatusChecks`| If status checks are required to update matching branches|
-|`RequiresStrictStatusChecks`| If branches are required to be up to date before merging|
-|`RestrictsPushes`| If pushing to matching branches is restricted|
-|`RestrictsReviewDismissals`| If dismissal of pull request reviews is restricted|
-
+<details>
+<summary><b>Click to Expand output <code>csv</code> file contents</b></summary>
+<table>
+<tr><th>Field Name</th><th>Description</th></tr>
+<tr><td><code>RepositoryName</code></td><td>The name of the repository where the data is extracted from</td></tr>
+<tr><td><code>RepositoryID</code></td><td>The `ID` associated with the Repository, for API usage</td></tr>
+<tr><td><code>BranchProtectionRulePattern</code></td><td>Identifies the protection rule pattern</td></tr>
+<tr><td><code>BranchProtectionRuleId</code></td><td>The branch protection policy ID that is needed for updating policies</td></tr>
+<tr><td><code>AllowsDeletions</code></td><td>If the branch associated to the policy can be deleted</td></tr>
+<tr><td><code>AllowsForcePushes</code></td><td>If force pushes are allowed on the branch</td></tr>
+<tr><td><code>BlockCreations</code></td><td>If branch creation matching the rule pattern is a protected operation</td></tr>
+<tr><td><code>DismissesStaleReviews</code></td><td>If new commits pushed to matching branches dismiss pull request review approvals</td></tr>
+<tr><td><code>IsAdminEnforced</code></td><td>If admins override branch protection</td></tr>
+<tr><td><code>LockAllowsFetchAndMerge</code></td><td>If users can pull changes from upstream when the branch is locked. Set to `true` allows fork syncing. Set to false prevents fork syncing</td></tr>
+<tr><td><code>LockBranch</code></td><td>If the branch is set as `read-only`. If this is `true`, users will not be able to push to the branch</td></tr>
+<tr><td><code>RequireLastPushApproval</code></td><td>If the most recent push must be approved by someone other than the person who pushed it</td></tr>
+<tr><td><code>RequiredApprovingReviewCount</code></td><td>Number of approving reviews required to update matching branches</td></tr>
+<tr><td><code>RequiresApprovingReviews</code></td><td>If approving reviews are required to update matching branches</td></tr>
+<tr><td><code>RequiresCodeOwnerReviews</code></td><td>If reviews from code owners are required to update matching branches</td></tr>
+<tr><td><code>RequiresCommitSignatures</code></td><td>If commits are required to be signed</td></tr>
+<tr><td><code>RequiresConversationResolution</code></td><td>If conversations are required to be resolved before merging</td></tr>
+<tr><td><code>RequiresDeployments</code></td><td>If this branch requires deployment to specific environments before merging</td></tr>
+<tr><td><code>RequiresLinearHistory</code></td><td>If merge commits are prohibited from being pushed to this branch</td></tr>
+<tr><td><code>RequiresStatusChecks</code></td><td>If status checks are required to update matching branches</td></tr>
+<tr><td><code>RequiresStrictStatusChecks</code></td><td>If branches are required to be up to date before merging</td></tr>
+<tr><td><code>RestrictsPushes</code></td><td>If pushing to matching branches is restricted</td></tr>
+<tr><td><code>RestrictsReviewDismissals</code></td><td>If dismissal of pull request reviews is restricted</td></tr>
+</table>
+</details>
+   
 ### Update Branch Protection Policies
 
 Branch protection policies for specified repositories defined in a **required** csv file for an organization.
@@ -100,31 +104,32 @@ Flags:
   -t, --token string       GitHub personal access token for organization to write to (default "gh auth token")
 ```
 
-The required csv file should contain the following information:
-
-
-| Field Name | Description |
-|:-----------|:------------|
-|`RepositoryName` | The name of the repository where the data is extracted from |
-|`RepositoryID`| The `ID` associated with the Repository, for API usage |
-|`BranchProtectionRulePattern`| Identifies the protection rule pattern |
-|`BranchProtectionRuleId`| The branch protection policy ID that is needed for updating policies |
-|`AllowsDeletions`| If the branch associated to the policy can be deleted |
-|`AllowsForcePushes`| If force pushes are allowed on the branch |
-|`BlockCreations`| If branch creation matching the rule pattern is a protected operation |
-|`DismissesStaleReviews`| If new commits pushed to matching branches dismiss pull request review approvals |
-|`IsAdminEnforced`| If admins override branch protection |
-|`LockAllowsFetchAndMerge`| If users can pull changes from upstream when the branch is locked. Set to `true` allows fork syncing. Set to false prevents fork syncing|
-|`LockBranch`| If the branch is set as `read-only`. If this is `true`, users will not be able to push to the branch|
-|`RequireLastPushApproval`| If the most recent push must be approved by someone other than the person who pushed it |
-|`RequiredApprovingReviewCount`| Number of approving reviews required to update matching branches|
-|`RequiresApprovingReviews`| If approving reviews are required to update matching branches |
-|`RequiresCodeOwnerReviews`| If reviews from code owners are required to update matching branches |
-|`RequiresCommitSignatures`| If commits are required to be signed|
-|`RequiresConversationResolution`| If conversations are required to be resolved before merging |
-|`RequiresDeployments`| If this branch requires deployment to specific environments before merging |
-|`RequiresLinearHistory`| If merge commits are prohibited from being pushed to this branch|
-|`RequiresStatusChecks`| If status checks are required to update matching branches|
-|`RequiresStrictStatusChecks`| If branches are required to be up to date before merging|
-|`RestrictsPushes`| If pushing to matching branches is restricted|
-|`RestrictsReviewDismissals`| If dismissal of pull request reviews is restricted|
+<details>
+<summary><b>Click to Expand required <code>csv</code> file contents</b></summary>
+<table>
+<tr><th>Field Name</th><th>Description</th></tr>
+<tr><td><code>RepositoryName</code></td><td>The name of the repository where the data is extracted from</td></tr>
+<tr><td><code>RepositoryID</code></td><td>The `ID` associated with the Repository, for API usage</td></tr>
+<tr><td><code>BranchProtectionRulePattern</code></td><td>Identifies the protection rule pattern</td></tr>
+<tr><td><code>BranchProtectionRuleId</code></td><td>The branch protection policy ID that is needed for updating policies</td></tr>
+<tr><td><code>AllowsDeletions</code></td><td>If the branch associated to the policy can be deleted</td></tr>
+<tr><td><code>AllowsForcePushes</code></td><td>If force pushes are allowed on the branch</td></tr>
+<tr><td><code>BlockCreations</code></td><td>If branch creation matching the rule pattern is a protected operation</td></tr>
+<tr><td><code>DismissesStaleReviews</code></td><td>If new commits pushed to matching branches dismiss pull request review approvals</td></tr>
+<tr><td><code>IsAdminEnforced</code></td><td>If admins override branch protection</td></tr>
+<tr><td><code>LockAllowsFetchAndMerge</code></td><td>If users can pull changes from upstream when the branch is locked. Set to `true` allows fork syncing. Set to false prevents fork syncing</td></tr>
+<tr><td><code>LockBranch</code></td><td>If the branch is set as `read-only`. If this is `true`, users will not be able to push to the branch</td></tr>
+<tr><td><code>RequireLastPushApproval</code></td><td>If the most recent push must be approved by someone other than the person who pushed it</td></tr>
+<tr><td><code>RequiredApprovingReviewCount</code></td><td>Number of approving reviews required to update matching branches</td></tr>
+<tr><td><code>RequiresApprovingReviews</code></td><td>If approving reviews are required to update matching branches</td></tr>
+<tr><td><code>RequiresCodeOwnerReviews</code></td><td>If reviews from code owners are required to update matching branches</td></tr>
+<tr><td><code>RequiresCommitSignatures</code></td><td>If commits are required to be signed</td></tr>
+<tr><td><code>RequiresConversationResolution</code></td><td>If conversations are required to be resolved before merging</td></tr>
+<tr><td><code>RequiresDeployments</code></td><td>If this branch requires deployment to specific environments before merging</td></tr>
+<tr><td><code>RequiresLinearHistory</code></td><td>If merge commits are prohibited from being pushed to this branch</td></tr>
+<tr><td><code>RequiresStatusChecks</code></td><td>If status checks are required to update matching branches</td></tr>
+<tr><td><code>RequiresStrictStatusChecks</code></td><td>If branches are required to be up to date before merging</td></tr>
+<tr><td><code>RestrictsPushes</code></td><td>If pushing to matching branches is restricted</td></tr>
+<tr><td><code>RestrictsReviewDismissals</code></td><td>If dismissal of pull request reviews is restricted</td></tr>
+</table>
+</details>
