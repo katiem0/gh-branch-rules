@@ -6,7 +6,6 @@ toolchain go1.21.5
 
 require (
 	github.com/cli/go-gh v1.2.1
-	github.com/fatih/structs v1.1.0
 	github.com/shurcooL/graphql v0.0.0-20230722043721-ed46e5a46466
 	github.com/spf13/cobra v1.8.0
 	go.uber.org/zap v1.26.0
