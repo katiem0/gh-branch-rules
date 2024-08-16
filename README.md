@@ -98,7 +98,7 @@ Usage:
 
 Flags:
   -d, --debug              To debug logging
-  -f, --from-file string   Path and Name of CSV file to create webhooks from
+  -f, --from-file string   Path and Name of CSV file to create branch protection policies from
   -h, --help               help for update
       --hostname string    GitHub Enterprise Server hostname (default "github.com")
   -t, --token string       GitHub personal access token for organization to write to (default "gh auth token")
