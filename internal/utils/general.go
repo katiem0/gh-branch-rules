@@ -3,7 +3,7 @@ package utils
 import (
 	"strconv"
 
-	"github.com/cli/go-gh/pkg/api"
+	"github.com/cli/go-gh/v2/pkg/api"
 	"github.com/katiem0/gh-branch-rules/internal/data"
 	"github.com/shurcooL/graphql"
 )
@@ -16,14 +16,14 @@ type Getter interface {
 }
 
 type APIGetter struct {
-	gqlClient  api.GQLClient
+	gqlClient  api.GraphQLClient
 	restClient api.RESTClient
 }
 
-func NewAPIGetter(gqlClient api.GQLClient, restClient api.RESTClient) *APIGetter {
+func NewAPIGetter(gqlClient *api.GraphQLClient, restClient *api.RESTClient) *APIGetter {
 	return &APIGetter{
-		gqlClient:  gqlClient,
-		restClient: restClient,
+		gqlClient:  *gqlClient,
+		restClient: *restClient,
 	}
 }
 
